@@ -10,7 +10,7 @@ st.title("🎉 Happy Birthday! 🎉")
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
 # Add the image (using the full path to your image)
-st.image("/home/hai/Pictures/mua_do_uav2.png", caption="Have an amazing birthday!", use_column_width=True)
+st.image("mua_do_uav2.png", caption="Have an amazing birthday!", use_column_width=True)
 
 # Button for a surprise message
 if st.button('Click for a Special Message'):
