@@ -25,12 +25,22 @@ if st.session_state.current_image < len(images):
     img_path, caption = images[st.session_state.current_image]
     st.image(img_path, caption=caption, use_column_width=True)
 
-# Button to show the next image
-if st.button('Show Next Image'):
-    if st.session_state.current_image < len(images) - 1:
-        st.session_state.current_image += 1
-    else:
-        st.success("🎉 You've seen all the images! 🎉")
+# Buttons to navigate through images
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button('Show Previous Image'):
+        if st.session_state.current_image > 0:
+            st.session_state.current_image -= 1
+        else:
+            st.warning("You are at the first image!")
+
+with col2:
+    if st.button('Show Next Image'):
+        if st.session_state.current_image < len(images) - 1:
+            st.session_state.current_image += 1
+        else:
+            st.success("🎉 You've seen all the images! 🎉")
 
 # Button for a surprise message
 if st.button('Click for a Special Message'):
