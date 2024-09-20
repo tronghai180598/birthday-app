@@ -9,14 +9,25 @@ st.title("🎉 Happy Birthday! 🎉")
 # Display the birthday message
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
-# Add the image (using the full path to your image)
-st.image("mua_do_uav2.png", caption="Have an amazing birthday!", use_column_width=True)
-# Add more images
-st.image("Kalman_filter.png", caption="Cherish every moment!", use_column_width=True)
-st.image("kalman.png", caption="Make this day unforgettable!", use_column_width=True)
+# Create a container for images
+st.subheader("📸 Some Special Moments 📸")
 
-# Add a video (use a URL from YouTube or local video file)
-#st.video("https://www.youtube.com/watch?v=YourVideoID")  # Replace with the actual YouTube link
+# Use st.columns to display images in a row (side by side)
+col1, col2, col3 = st.columns(3)
+
+# Add images to each column
+with col1:
+    st.image("mua_do_uav2.png", caption="Have an amazing birthday!", use_column_width=True)
+
+with col2:
+    st.image("Kalman_filter.png", caption="Cherish every moment!", use_column_width=True)
+
+with col3:
+    st.image("kalman.png", caption="Make this day unforgettable!", use_column_width=True)
+
+# Add a video (uncomment and replace with your video link)
+# st.video("https://www.youtube.com/watch?v=YourVideoID")  
+
 # Button for a surprise message
 if st.button('Click for a Special Message'):
     st.success("🎂 Enjoy your day to the fullest! 🎉")
