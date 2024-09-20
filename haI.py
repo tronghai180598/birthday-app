@@ -9,24 +9,28 @@ st.title("🎉 Happy Birthday! 🎉")
 # Display the birthday message
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
-# Create a container for images
-st.subheader("📸 Some Special Moments 📸")
+# Initialize session state to keep track of the current image index
+if 'current_image' not in st.session_state:
+    st.session_state.current_image = 0
 
-# Use st.columns to display images in a row (side by side)
-col1, col2, col3 = st.columns(3)
+# List of images and their captions
+images = [
+    ("mua_do_uav2.png", "Have an amazing birthday!"),
+    ("Kalman_filter.png", "Cherish every moment!"),
+    ("kalman.png", "Make this day unforgettable!")
+]
 
-# Add images to each column
-with col1:
-    st.image("mua_do_uav2.png", caption="Have an amazing birthday!", use_column_width=True)
+# Display the current image based on the session state index
+if st.session_state.current_image < len(images):
+    img_path, caption = images[st.session_state.current_image]
+    st.image(img_path, caption=caption, use_column_width=True)
 
-with col2:
-    st.image("Kalman_filter.png", caption="Cherish every moment!", use_column_width=True)
-
-with col3:
-    st.image("kalman.png", caption="Make this day unforgettable!", use_column_width=True)
-
-# Add a video (uncomment and replace with your video link)
-# st.video("https://www.youtube.com/watch?v=YourVideoID")  
+# Button to show the next image
+if st.button('Show Next Image'):
+    if st.session_state.current_image < len(images) - 1:
+        st.session_state.current_image += 1
+    else:
+        st.success("🎉 You've seen all the images! 🎉")
 
 # Button for a surprise message
 if st.button('Click for a Special Message'):
