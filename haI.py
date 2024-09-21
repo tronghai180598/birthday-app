@@ -26,15 +26,20 @@ if st.button('Bam vo day di'):
     st.balloons()  # This will make balloons fall on the screen
     st.success("Nga ngo yeu anh khong??? hehe")
 
-    # Show two buttons for "Yes" and "No" options
-    col1, col2 = st.columns(2)
+    # Initialize session state for 'answer' to track user's choice
+    if 'answer' not in st.session_state:
+        st.session_state.answer = None
 
-    with col1:
-        if st.button('Yes'):
-            st.success("Chuc mung em co duoc a! 🎉")
+    # Radio button for choice between Yes and No
+    choice = st.radio("Select an answer:", ("Yes", "No"))
 
-    with col2:
-        if st.button('No'):
-            st.error("Sai roi, can phai chon lai!")
-            if st.button("Chon lai di"):
-                st.experimental_rerun()  # Reloads the app to let the user choose again
+    if choice == "Yes":
+        st.success("Chuc mung em co duoc a! 🎉")
+        st.session_state.answer = "Yes"  # Stop asking when Yes is selected
+    elif choice == "No":
+        st.warning("Sai roi, can phai chon lai!")
+        st.session_state.answer = "No"
+
+    # If 'No' was selected, show the question again
+    if st.session_state.answer == "No":
+        st.warning("Chon lai di!")
