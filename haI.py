@@ -10,7 +10,7 @@ st.title("🎉 Yeu Nga Ngo 🎉")
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
 # Display the image (Make sure to have 'fb_ngango.jpg' in the correct directory)
-st.image("fb_ngango.jpg", caption="Cherish every moment!", use_column_width=True)
+st.image("fb_ngango.png", caption="Cherish every moment!", use_column_width=True)
 
 # Button for a surprise message
 if st.button('Chon nut nay di'):
