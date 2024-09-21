@@ -43,7 +43,7 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
             # st.success("🎉 You've seen all the images! 🎉")
 
 # Button for a surprise message
-if st.button('Click for a Special Message'):
+if st.button('Chon nut nay di'):
     st.success("Nga Ngo Co Len")
 
 # Add another message or text section
@@ -52,6 +52,6 @@ st.write("Co anh day roi.hehe")
 
 # Add another section for more fun or interactive content
 st.subheader("🎈 A Little Party Game 🎈")
-if st.button('Click to Reveal a Surprise'):
+if st.button('Bam vo day di'):
     st.balloons()  # This will make balloons fall on the screen
     st.success("Nga ngo yeu anh khong??? hehe")
