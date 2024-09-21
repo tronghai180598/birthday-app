@@ -26,7 +26,7 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 #     st.image(img_path, caption=caption, use_column_width=True)
 
 # Buttons to navigate through images
-col1, col2 = st.columns(2)
+# col1, col2 = st.columns(2)
 
 # with col1:
 #     if st.button('Show Previous Image'):
@@ -40,7 +40,7 @@ col1, col2 = st.columns(2)
 #         if st.session_state.current_image < len(images) - 1:
 #             st.session_state.current_image += 1
 #         else:
-            st.success("🎉 You've seen all the images! 🎉")
+            # st.success("🎉 You've seen all the images! 🎉")
 
 # Button for a surprise message
 if st.button('Click for a Special Message'):
