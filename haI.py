@@ -14,16 +14,12 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 #     st.session_state.current_image = 0
 
 # List of images and their captions
-# images = [
-#     ("mua_do_uav2.png", "Have an amazing birthday!"),
-#     ("Kalman_filter.png", "Cherish every moment!"),
-#     ("kalman.png", "Make this day unforgettable!")
-# ]
+images = [ ("fb_ngango", "Cherish every moment!")]
 
 # Display the current image based on the session state index
-# if st.session_state.current_image < len(images):
-#     img_path, caption = images[st.session_state.current_image]
-#     st.image(img_path, caption=caption, use_column_width=True)
+if st.session_state.current_image < len(images):
+    img_path, caption = images[st.session_state.current_image]
+    st.image(img_path, caption=caption, use_column_width=True)
 
 # Buttons to navigate through images
 # col1, col2 = st.columns(2)
