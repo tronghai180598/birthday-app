@@ -25,3 +25,13 @@ st.subheader("🎈 A Little Party Game 🎈")
 if st.button('Bam vo day di'):
     st.balloons()  # This will make balloons fall on the screen
     st.success("Nga ngo yeu anh khong??? hehe")
+
+    # Show options for "Yes" or "No" answer
+    choice = st.radio("Select an answer:", ("Yes", "No"))
+
+    if choice == "Yes":
+        st.success("Chuc mung em co duoc a! 🎉")
+    elif choice == "No":
+        st.error("Sai roi, can phai chon lai!")
+        if st.button("Chon lai di"):
+            st.experimental_rerun()  # Reloads the app to let the user choose again
