@@ -10,8 +10,8 @@ st.title("🎉 Happy Birthday! 🎉")
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
 # Initialize session state to keep track of the current image index
-if 'current_image' not in st.session_state:
-    st.session_state.current_image = 0
+# if 'current_image' not in st.session_state:
+#     st.session_state.current_image = 0
 
 # List of images and their captions
 # images = [
@@ -28,18 +28,18 @@ if 'current_image' not in st.session_state:
 # Buttons to navigate through images
 col1, col2 = st.columns(2)
 
-with col1:
-    if st.button('Show Previous Image'):
-        if st.session_state.current_image > 0:
-            st.session_state.current_image -= 1
-        else:
-            st.warning("You are at the first image!")
+# with col1:
+#     if st.button('Show Previous Image'):
+#         if st.session_state.current_image > 0:
+#             st.session_state.current_image -= 1
+#         else:
+#             st.warning("You are at the first image!")
 
-with col2:
-    if st.button('Show Next Image'):
-        if st.session_state.current_image < len(images) - 1:
-            st.session_state.current_image += 1
-        else:
+# with col2:
+#     if st.button('Show Next Image'):
+#         if st.session_state.current_image < len(images) - 1:
+#             st.session_state.current_image += 1
+#         else:
             st.success("🎉 You've seen all the images! 🎉")
 
 # Button for a surprise message
