@@ -44,14 +44,14 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
 # Button for a surprise message
 if st.button('Click for a Special Message'):
-    st.success("🎂 Enjoy your day to the fullest! 🎉")
+    st.success("Nga Ngo Co Len")
 
 # Add another message or text section
-st.subheader("🎁 Here's a Special Wish for You! 🎁")
-st.write("May all your dreams come true and may happiness always be with you!")
+st.subheader("Gan duoc ve roi")
+st.write("Co anh day roi.hehe")
 
 # Add another section for more fun or interactive content
 st.subheader("🎈 A Little Party Game 🎈")
 if st.button('Click to Reveal a Surprise'):
     st.balloons()  # This will make balloons fall on the screen
-    st.success("🎉 You got a surprise! 🎉")
+    st.success("Nga ngo yeu anh khong??? hehe")
