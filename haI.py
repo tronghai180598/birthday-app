@@ -36,7 +36,7 @@ if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
         st.session_state.answer = None
 
     # Radio button for choice between Yes and No
-    choice = st.radio("Select an answer:", ("Yes", "No"))
+    choice = st.radio("Select an answer:", (st.button('YES'), st.button('NO')))
 
     if choice == "Yes":
         st.success("Chuc mung em co duoc a! 🎉")
