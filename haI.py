@@ -39,7 +39,7 @@ st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG
 if st.session_state.answer is None:
     if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
-        st.image("yeuthuong.jfif", caption="Anh đang rất giận đó!", use_column_width=True)
+        st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Save the answer
 
