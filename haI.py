@@ -16,16 +16,17 @@ if st.button('EM ẤN NÚT 1'):
                "Vì điều kiện không cho phép anh được ở gần em trong ngày tuyệt vời này nên a muốn làm gì đó đặc biệt để gửi tới em")
 if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+if st.button('EM ẤN NÚT 3'):
+    # Add a video section
+    st.subheader("🎥 A Special Video 🎥")
+    video_file = open('video_nen.mp4', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
 
 # Add another message or text section
 st.subheader("Gan duoc ve roi")
 st.write("Co anh day roi.hehe")
 
-# Add a video section
-st.subheader("🎥 A Special Video 🎥")
-video_file = open('path_to_your_video.mp4', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
 
 # Add another section for more fun or interactive content
 st.subheader("🎈 A Little Party Game 🎈")
