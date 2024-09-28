@@ -17,7 +17,7 @@ if st.button('EM ẤN NÚT 1'):
     st.success("Umbala, Hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh." " "
 "Một ngày hết sức ý nghĩa cho em và cho cả anh nữa." " "
 " Vì điều kiện không cho phép anh được ở gần em trong ngày tuyệt vời này nên a muốn làm gì đó đặc biệt để gửi tới em")
-elif st.button('EM ẤN NÚT 2'):
+if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Cherish every moment!", use_column_width=True)
 # Add another message or text section
 st.subheader("Gan duoc ve roi")
