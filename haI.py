@@ -40,10 +40,10 @@ st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG
     if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
-        st.session_state.answer = "Yes"  # Save the answer
+        # st.session_state.answer = "Yes"  # Save the answer
     elif st.button('NO'):
         st.warning("Chọn lại đi!")
-        st.session_state.answer = "No"
+        # st.session_state.answer = "No"
 
 # # # Display final message only if "YES" was selected
 # if st.session_state.answer == "Yes":
