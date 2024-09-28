@@ -19,7 +19,7 @@ if st.button('EM ẤN NÚT 2'):
 if st.button('EM ẤN NÚT 3'):
     # Password-protected section
     st.subheader("🔒 Password Protected Video Section")
-    password = st.text_input("Ngango07102001:", type="password")
+    password = st.text_input("Nhập Mật Khẩu Đi Bạn Êi:", type="password")
 
     if password == "Ngango07102001":  # Replace with your desired password
         # Add a video section
