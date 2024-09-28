@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Set page title and icon
-st.set_page_config(page_title="Nga Ngo Co len", page_icon="🎉")
+st.set_page_config(page_title="CHÚC MỪNG SINH NHẬT", page_icon="🎉")
 
 # Title for the web page
 st.title("🎉 Yeu Nga Ngo 🎉")
@@ -9,8 +9,8 @@ st.title("🎉 Yeu Nga Ngo 🎉")
 # Display the birthday message
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 
-# Display the image (Make sure to have 'fb_ngango.jpg' in the correct directory)
-st.image("fb_ngango.png", caption="Cherish every moment!", use_column_width=True)
+# # Display the image (Make sure to have 'fb_ngango.jpg' in the correct directory)
+# st.image("fb_ngango.png", caption="Cherish every moment!", use_column_width=True)
 
 # Button for a surprise message
 if st.button('Chon nut nay di'):
