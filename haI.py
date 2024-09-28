@@ -11,6 +11,7 @@ st.write("1 ĐỜI AN YÊN VÀ HẠNH PHÚC")
 
 # Button for a surprise message
 if st.button('EM ẤN NÚT 1'):
+    st.image("bánhinhnhat.PNG", caption="CHÚC MỪNG SINH NHẬT NÓC NHÀ", use_column_width=True)
     st.success("Umbala, Hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh." 
                " Một ngày hết sức ý nghĩa cho em và cho cả anh nữa." 
                " Vì điều kiện không cho phép anh được ở gần em trong ngày tuyệt vời này nên anh muốn làm gì đó đặc biệt để gửi tới em")
