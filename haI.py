@@ -27,7 +27,8 @@ if st.button('EM ẤN NÚT 3'):
         video_bytes = video_file.read()
         st.video(video_bytes))
     else:
-        st.error("Access denied. Incorrect password.")
+        if password:  # Only show error if a password has been entered
+            st.error("Access denied. Incorrect password.")
 
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
