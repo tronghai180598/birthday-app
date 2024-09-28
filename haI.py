@@ -38,17 +38,13 @@ if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
     st.balloons()  # This will make balloons fall on the screen
     st.success("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
-    # Buttons for choices
-    col1, col2 = st.columns(2)  # Create two columns for buttons
-    with col1:
-        if st.button('YES'):
-            st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
-            st.balloons()  # This will make balloons fall on the screen
-            st.session_state.answer = "Yes"  # Stop asking when Yes is selected
-    with col2:
-        if st.button('NO'):
-            st.warning("Chọn lại đi!")
-            st.session_state.answer = "No"
+    if st.button('YES'):
+        st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
+        st.balloons()  # This will make balloons fall on the screen
+        st.session_state.answer = "Yes"  # Stop asking when Yes is selected
+    if st.button('NO'):
+        st.warning("Chọn lại đi!")
+        st.session_state.answer = "No"
 
 # Display final message based on answer
 if st.session_state.answer is not None:
