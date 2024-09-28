@@ -17,11 +17,18 @@ if st.button('EM ẤN NÚT 1'):
 if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 if st.button('EM ẤN NÚT 3'):
-    # Add a video section
-    st.subheader("🎥 VIDEO TẶNG NGA NGỐ NHÂN NGÀY SINH NHẬT. TRÌNH EDIT HƠI KÉM, EM VỀ ĐÀO TẠO THÊM NHÉ. HEHE 🎥")
-    video_file = open('video_nen.mp4', 'rb')
-    video_bytes = video_file.read()
-    st.video(video_bytes)
+    # Password-protected section
+    st.subheader("🔒 Password Protected Video Section")
+    password = st.text_input("Ngango07102001:", type="password")
+
+    if password == "Ngango07102001":  # Replace with your desired password
+        # Add a video section
+        st.subheader("🎥 VIDEO TẶNG NGA NGỐ NHÂN NGÀY SINH NHẬT. TRÌNH EDIT HƠI KÉM, EM VỀ ĐÀO TẠO THÊM NHÉ. HEHE 🎥")
+        video_file = open('video_nen.mp4', 'rb')
+        video_bytes = video_file.read()
+        st.video(video_bytes)
+    else:
+        st.error("Access denied. Incorrect password.")
 
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
