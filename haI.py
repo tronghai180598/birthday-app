@@ -28,9 +28,8 @@ st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 
 # Add another section for more fun or interactive content
-st.subheader("🎈 A Little Party Game 🎈")
+st.subheader("🎈HÃY NÊU CẢM XÚC CỦA BẠN NÀO: 🎈")
 
-# Initialize session state for 'answer' to track user's choice
 
 
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
@@ -39,7 +38,7 @@ if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Stop asking when Yes is selected
-if st.button('NO'):
+elif st.button('NO'):
         st.warning("Chọn lại đi!")
         st.session_state.answer = "No"
 
