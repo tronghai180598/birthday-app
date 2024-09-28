@@ -15,7 +15,8 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 # Button for a surprise message
 if st.button('EM ẤN NÚT 1'):
     st.success("Umbala, Hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh."
-"Một ngày hết sức ý nghĩa cho em và cho cả anh nữa ")
+"Một ngày hết sức ý nghĩa cho em và cho cả anh nữa "
+" Vì điều kiện không ch phép a ở gần em nên a muốn làm gì đó đặc biệt gửi tới em")
 
 # Add another message or text section
 st.subheader("Gan duoc ve roi")
