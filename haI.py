@@ -27,9 +27,9 @@ st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 
 # Add another section for more fun or interactive content
 st.subheader("🎈 A Little Party Game 🎈")
-if st.button('Bam vo day di'):
+if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
     st.balloons()  # This will make balloons fall on the screen
-    st.success("Nga ngo yeu anh khong??? hehe")
+    st.success("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VÈ DẠM NGÕ VỚI ANH KHÔNG???")
 
     # Initialize session state for 'answer' to track user's choice
     if 'answer' not in st.session_state:
