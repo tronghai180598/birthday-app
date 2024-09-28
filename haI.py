@@ -35,16 +35,15 @@ if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
     if 'answer' not in st.session_state:
         st.session_state.answer = None
 
-    # Radio button for choice between Yes and No
-    choice = st.radio("Select an answer:", (st.button('YES'), st.button('NO')))
-
-    if choice == "Yes":
-        st.success("Chuc mung em co duoc a! 🎉")
+    # Buttons for choice between Yes and No
+    if st.button('YES'):
+        st.success("OK")
+        st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Stop asking when Yes is selected
-    elif choice == "No":
-        st.warning("Sai roi, can phai chon lai!")
+    elif st.button('NO'):
+        st.warning("Again")
         st.session_state.answer = "No"
 
     # If 'No' was selected, show the question again
     if st.session_state.answer == "No":
-        st.warning("Chon lai di!")
+        st.warning("Chọn lại đi!")
