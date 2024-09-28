@@ -18,14 +18,14 @@ if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 if st.button('EM ẤN NÚT 3'):
     # Add a video section
-    st.subheader("🎥 A Special Video 🎥")
+    st.subheader("🎥 VIDEO TẶNG NGA NGỐ NHÂN NGÀY SINH NHẬT. TRÌNH EDIT HƠI KÉM, EM VỀ ĐÀO TẠO THÊM NHÉ. HEHE 🎥")
     video_file = open('video_nen.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
 # Add another message or text section
-st.subheader("Gan duoc ve roi")
-st.write("Co anh day roi.hehe")
+st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
+st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 
 
 # Add another section for more fun or interactive content
