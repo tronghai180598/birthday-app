@@ -18,7 +18,7 @@ if st.button('EM ẤN NÚT 1'):
 "Một ngày hết sức ý nghĩa cho em và cho cả anh nữa." " "
 " Vì điều kiện không cho phép anh được ở gần em trong ngày tuyệt vời này nên a muốn làm gì đó đặc biệt để gửi tới em")
 if st.button('EM ẤN NÚT 2'):
-    st.image("hoa hong.jfif", caption="Cherish every moment!", use_column_width=True)
+    st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 # Add another message or text section
 st.subheader("Gan duoc ve roi")
 st.write("Co anh day roi.hehe")
