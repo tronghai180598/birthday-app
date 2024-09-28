@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="CHÚC MỪNG SINH NHẬT", page_icon="🎉")
 
 # Title for the web page
-st.title("🎉 Yeu Nga Ngo 🎉")
+st.title("🎉 CHÚC MỪNG SINH NHẬT NGA NGỐ 🎉")
 
 # Display the birthday message
 st.write("Wishing you a wonderful birthday filled with joy and happiness!")
