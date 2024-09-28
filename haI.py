@@ -25,7 +25,7 @@ if st.button('EM ẤN NÚT 3'):
         st.success("Access granted!")
         video_file = open('path_to_your_video.mp4', 'rb')
         video_bytes = video_file.read()
-        st.video(video_bytes))
+        st.video(video_bytes)
     else:
         if password:  # Only show error if a password has been entered
             st.error("Access denied. Incorrect password.")
@@ -33,7 +33,6 @@ if st.button('EM ẤN NÚT 3'):
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
-
 
 # Add another section for more fun or interactive content
 st.subheader("🎈 A Little Party Game 🎈")
