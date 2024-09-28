@@ -31,12 +31,14 @@ if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
     st.balloons()  # This will make balloons fall on the screen
     st.success("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VÈ DẠM NGÕ VỚI ANH KHÔNG???")
 
+    choice = st.radio("Select an answer:", (st.button('YES'), st.button('NO')))
+
     # Initialize session state for 'answer' to track user's choice
     if 'answer' not in st.session_state:
         st.session_state.answer = None
 
     # Buttons for choice between Yes and No
-    if st.button('YES'):
+    if choice == st.button('YES'):
         st.success("OK")
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Stop asking when Yes is selected
