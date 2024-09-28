@@ -22,31 +22,30 @@ if st.button('EM ẤN NÚT 3'):
     video_file = open('video_nen.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-
+    
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
+# Initialize session state for 'answer'
+if 'answer' not in st.session_state:
+    st.session_state.answer = None
 
-# Interactive content section
-st.subheader("🎈 HÃY NÊU CẢM XÚC CỦA BẠN NÀO: 🎈")
+# Ask the user for their choice
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
-# Initialize session state for 'answer'
-# if 'answer' not in st.session_state:
-#     st.session_state.answer = None
+if st.session_state.answer is None:
+    choice = st.radio("Chọn một đáp án:", ('YES', 'NO'))
 
-# # Show buttons only if no answer has been selected
-# if st.session_state.answer is None:
-    if st.button('YES'):
-        st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
-        st.balloons()  # This will make balloons fall on the screen
-        # st.session_state.answer = "Yes"  # Save the answer
-    elif st.button('NO'):
-        st.warning("Chọn lại đi!")
-        # st.session_state.answer = "No"
-
-# # # Display final message only if "YES" was selected
-# if st.session_state.answer == "Yes":
-#     st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
-
-# Do not display anything for "NO" selection
+    if st.button('GỬI'):
+        if choice == 'YES':
+            st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
+            st.balloons()  # This will make balloons fall on the screen
+            st.session_state.answer = "Yes"  # Save the answer
+        elif choice == 'NO':
+            st.warning("Chọn lại đi!")
+            st.session_state.answer = "No"
+else:
+    # Display final message based on answer
+    if st.session_state.answer == "Yes":
+        st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
+ 
