@@ -23,9 +23,12 @@ if st.button('EM ẤN NÚT 3'):
 
     if password == "Ngango":  # Replace with your desired password
         st.success("Access granted!")
-        video_file = open('video_nen.mp4', 'rb')
-        video_bytes = video_file.read()
-        st.video(video_bytes)
+        try:
+            video_file = open('video_nen.mp4', 'rb')
+            video_bytes = video_file.read()
+            st.video(video_bytes)
+        except FileNotFoundError:
+            st.error("Video file not found. Please check the file path.")
     else:
         if password:  # Only show error if a password has been entered
             st.error("Access denied. Incorrect password.")
