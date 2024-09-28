@@ -17,9 +17,23 @@ if st.button('EM ẤN NÚT 1'):
 if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 if st.button('EM ẤN NÚT 3'):
+    # Password-protected section
+    st.subheader("🔒 Password Protected Video Section")
+    password = st.text_input("Nhập Mật Khẩu Đi Bạn Êi:", type="password")
+
+    if password == "Ngango":  # Replace with your desired password
+        st.success("Access granted!")
+        try:
             video_file = open('video_nen.mp4', 'rb')
             video_bytes = video_file.read()
             st.video(video_bytes)
+        except FileNotFoundError:
+            st.error("Video file not found. Please check the file path.")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
+    else:
+        if password:  # Only show error if a password has been entered
+            st.error("Access denied. Incorrect password.")
 
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
