@@ -21,7 +21,7 @@ if st.button('EM ẤN NÚT 3'):
     st.subheader("🔒 Password Protected Video Section")
     password = st.text_input("Nhập Mật Khẩu Đi Bạn Êi:", type="password")
 
-    if password == "Ngango07102001":  # Replace with your desired password
+    if password == "Ngango":  # Replace with your desired password
         # Add a video section
         st.subheader("🎥 VIDEO TẶNG NGA NGỐ NHÂN NGÀY SINH NHẬT. TRÌNH EDIT HƠI KÉM, EM VỀ ĐÀO TẠO THÊM NHÉ. HEHE 🎥")
         video_file = open('video_nen.mp4', 'rb')
