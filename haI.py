@@ -48,3 +48,8 @@ else:
     # Display final message based on answer
     if st.session_state.answer == "Yes":
         st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
+
+    # Reset button to allow choosing again
+    if st.button("Chọn lại"):
+        st.session_state.answer = None  # Reset the answer state
+        st.success("Bạn có thể chọn lại!")
