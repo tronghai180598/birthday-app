@@ -34,7 +34,6 @@ st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG
 
     choice = st.radio("Chọn một đáp án:", (st.button('YES')', st.button('NO')))
 
-    if st.button('YES'):
         if choice == st.button('YES'):
             st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
             st.balloons()  # This will make balloons fall on the screen
@@ -42,6 +41,5 @@ st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG
         elif choice == st.button('NO')':
             st.warning("Chọn lại đi!")
 
-    else:
-        st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
+
  
