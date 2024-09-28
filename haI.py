@@ -29,6 +29,8 @@ if st.button('EM ẤN NÚT 3'):
             st.video(video_bytes)
         except FileNotFoundError:
             st.error("Video file not found. Please check the file path.")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
     else:
         if password:  # Only show error if a password has been entered
             st.error("Access denied. Incorrect password.")
