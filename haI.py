@@ -27,23 +27,26 @@ if st.button('EM ẤN NÚT 3'):
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 
-# Add another section for more fun or interactive content
-st.subheader("🎈HÃY NÊU CẢM XÚC CỦA BẠN NÀO: 🎈")
-
-
-
+# Interactive content section
+st.subheader("🎈 HÃY NÊU CẢM XÚC CỦA BẠN NÀO: 🎈")
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
+# Initialize session state for 'answer'
 if 'answer' not in st.session_state:
     st.session_state.answer = None
-if st.button('YES'):
+
+# Show buttons only if no answer has been selected
+if st.session_state.answer is None:
+    if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
-        st.session_state.answer = "Yes"  # Stop asking when Yes is selected
-if st.button('NO'):
+        st.session_state.answer = "Yes"  # Save the answer
+    elif st.button('NO'):
         st.warning("Chọn lại đi!")
         st.session_state.answer = "No"
 
-# Display final message based on answer
-if st.session_state.answer is not None:
+# Display final message only if "YES" was selected
+if st.session_state.answer == "Yes":
     st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
+
+# Do not display anything for "NO" selection
