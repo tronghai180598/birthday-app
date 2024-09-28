@@ -45,8 +45,8 @@ if st.session_state.answer is None:
         st.warning("Chọn lại đi!")
         st.session_state.answer = "No"
 
-# Display final message only if "YES" was selected
-if st.session_state.answer == "Yes":
-    st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
+# # Display final message only if "YES" was selected
+# if st.session_state.answer == "Yes":
+#     st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
 
 # Do not display anything for "NO" selection
