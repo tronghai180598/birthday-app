@@ -45,7 +45,7 @@ if st.session_state.answer is None:
      elif st.button('NO'):
         st.session_state.answer = "No"
         st.warning("😡 Chọn lại đi! 😡")
-        st.image("angry_image.jpg", caption="Anh đang rất giận đó!", use_column_width=True)  # Replace with your image path
+        st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)  # Replace with your image path
         st.session_state.answer = "No"
 else:
     # Display final message based on answer
