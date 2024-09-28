@@ -39,7 +39,7 @@ if st.button('BẤM VÔ ĐÂY ĐI EM ÊI'):
 
     # Buttons for choices
     if st.button('YES'):
-        st.success("OK")
+        st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Stop asking when Yes is selected
     elif st.button('NO'):
