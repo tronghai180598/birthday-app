@@ -38,7 +38,7 @@ if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Stop asking when Yes is selected
-elif st.button('NO'):
+else st.button('NO'):
         st.warning("Chọn lại đi!")
         st.session_state.answer = "No"
 
