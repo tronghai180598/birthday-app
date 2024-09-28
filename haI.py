@@ -27,6 +27,7 @@ if st.button('EM ẤN NÚT 3'):
             video_file = open('video_nen.mp4', 'rb')
             video_bytes = video_file.read()
             st.video(video_bytes)
+            st.write("Video should be displayed above.")
         except FileNotFoundError:
             st.error("Video file not found. Please check the file path.")
         except Exception as e:
