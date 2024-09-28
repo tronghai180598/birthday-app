@@ -17,7 +17,7 @@ if st.button('EM ẤN NÚT 1'):
                " Vì điều kiện không cho phép anh được ở gần em trong ngày tuyệt vời này nên anh muốn làm gì đó đặc biệt để gửi tới em")
 
 if st.button('EM ẤN NÚT 2'):
-    st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    st.image("hoa_hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 
 if st.button('EM ẤN NÚT 3'):
     video_file = open('video_nen.mp4', 'rb')
@@ -42,11 +42,10 @@ if st.session_state.answer is None:
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Save the answer
 
-     elif st.button('NO'):
+    elif st.button('NO'):
         st.session_state.answer = "No"
         st.warning("😡 Chọn lại đi! 😡")
-        st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)  # Replace with your image path
-        st.session_state.answer = "No"
+        st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
 else:
     # Display final message based on answer
     if st.session_state.answer == "Yes":
