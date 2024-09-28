@@ -34,18 +34,15 @@ if 'answer' not in st.session_state:
 # Ask the user for their choice
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
-# Show the radio buttons for choices
+# Show buttons for choices
 if st.session_state.answer is None:
-    choice = st.radio("Chọn một đáp án:", ('YES', 'NO'))
-
-    if st.button('GỬI'):
-        if choice == 'YES':
-            st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
-            st.balloons()  # This will make balloons fall on the screen
-            st.session_state.answer = "Yes"  # Save the answer
-        elif choice == 'NO':
-            st.warning("Chọn lại đi!")
-            st.session_state.answer = "No"
+    if st.button('YES'):
+        st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
+        st.balloons()  # This will make balloons fall on the screen
+        st.session_state.answer = "Yes"  # Save the answer
+    elif st.button('NO'):
+        st.warning("Chọn lại đi!")
+        st.session_state.answer = "No"
 else:
     # Display final message based on answer
     if st.session_state.answer == "Yes":
