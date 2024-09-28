@@ -13,8 +13,9 @@ st.write("Wishing you a wonderful birthday filled with joy and happiness!")
 # st.image("fb_ngango.png", caption="Cherish every moment!", use_column_width=True)
 
 # Button for a surprise message
-if st.button('Chon nut nay di'):
-    st.success("Nga Ngo Co Len")
+if st.button('EM ẤN NÚT 1'):
+    st.success("Umbala, Hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh./n
+Một ngày hết sức ý nghĩa cho em và cho cả anh nữa ")
 
 # Add another message or text section
 st.subheader("Gan duoc ve roi")
