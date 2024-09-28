@@ -32,11 +32,11 @@ st.subheader("🎈 HÃY NÊU CẢM XÚC CỦA BẠN NÀO: 🎈")
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
 # Initialize session state for 'answer'
-if 'answer' not in st.session_state:
-    st.session_state.answer = None
+# if 'answer' not in st.session_state:
+#     st.session_state.answer = None
 
-# Show buttons only if no answer has been selected
-if st.session_state.answer is None:
+# # Show buttons only if no answer has been selected
+# if st.session_state.answer is None:
     if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
@@ -45,7 +45,7 @@ if st.session_state.answer is None:
         st.warning("Chọn lại đi!")
         st.session_state.answer = "No"
 
-# # Display final message only if "YES" was selected
+# # # Display final message only if "YES" was selected
 # if st.session_state.answer == "Yes":
 #     st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
 
