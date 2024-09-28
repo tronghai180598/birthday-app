@@ -41,8 +41,11 @@ if st.session_state.answer is None:
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.balloons()  # This will make balloons fall on the screen
         st.session_state.answer = "Yes"  # Save the answer
-    elif st.button('NO'):
-        st.warning("Chọn lại đi!")
+
+     elif st.button('NO'):
+        st.session_state.answer = "No"
+        st.warning("😡 Chọn lại đi! 😡")
+        st.image("angry_image.jpg", caption="Anh đang rất giận đó!", use_column_width=True)  # Replace with your image path
         st.session_state.answer = "No"
 else:
     # Display final message based on answer
