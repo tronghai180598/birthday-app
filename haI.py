@@ -22,24 +22,31 @@ if st.button('EM ẤN NÚT 3'):
     video_file = open('video_nen.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-    
+
 # Add another message or text section
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
+
 # Initialize session state for 'answer'
+if 'answer' not in st.session_state:
+    st.session_state.answer = None
 
 # Ask the user for their choice
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
 
+# Show the radio buttons for choices
+if st.session_state.answer is None:
+    choice = st.radio("Chọn một đáp án:", ('YES', 'NO'))
 
-    choice = st.radio("Chọn một đáp án:", (st.button('YES')', st.button('NO')))
-
-        if choice == st.button('YES'):
+    if st.button('GỬI'):
+        if choice == 'YES':
             st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
             st.balloons()  # This will make balloons fall on the screen
-
-        elif choice == st.button('NO')':
+            st.session_state.answer = "Yes"  # Save the answer
+        elif choice == 'NO':
             st.warning("Chọn lại đi!")
-
-
- 
+            st.session_state.answer = "No"
+else:
+    # Display final message based on answer
+    if st.session_state.answer == "Yes":
+        st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
