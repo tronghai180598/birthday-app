@@ -46,12 +46,14 @@ if st.session_state.answer is None:
         st.session_state.answer = "No"
         st.warning("😡 Chọn lại đi! 😡")
         st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
+        if st.button("Chọn lại"):
+            st.session_state.answer = None  # Reset the answer state
+            st.success("Bạn có thể chọn lại!")
+            return True
 else:
     # Display final message based on answer
     if st.session_state.answer == "Yes":
         st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
 
     # Reset button to allow choosing again
-    if st.button("Chọn lại"):
-        st.session_state.answer = None  # Reset the answer state
-        st.success("Bạn có thể chọn lại!")
+
