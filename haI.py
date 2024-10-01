@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 
 # Set page title and icon
 st.set_page_config(page_title="CHÚC MỪNG SINH NHẬT", page_icon="🎉")
@@ -39,14 +40,14 @@ if st.session_state.answer is None:
     if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
-        st.balloons()  # Это заставит шарики упасть на экран
-        st.session_state.answer = "Yes"  # Сохранить ответ
+        st.balloons()
+        st.session_state.answer = "Yes"
 
     elif st.button('NO'):
         st.session_state.answer = "No"
         st.warning("😡 Chọn lại đê! 😡")
         st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
-        
+
         # Изменяем текст кнопки "NO" на "YES"
         if st.button("YES", key="yes_replacement"):
             st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
@@ -55,11 +56,43 @@ if st.session_state.answer is None:
             st.session_state.answer = "Yes"
 
 else:
-    # Отображение финального сообщения на основе ответа
     if st.session_state.answer == "Yes":
         st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
-    
-    # Позволяет пользователю сбросить свой выбор
+
     if st.button("Chọn lại"):
-        st.session_state.answer = None  # Сбросить состояние ответа
+        st.session_state.answer = None
         st.success("Bạn có thể chọn lại!")
+
+# Игра: Попади в шар
+st.subheader("Игра: Попади в шар!")
+if 'attempts' not in st.session_state:
+    st.session_state.attempts = 0
+    st.session_state.hit = False
+
+# Генерируем случайное число от 1 до 10 для попадания в шар
+target_ball = random.randint(1, 10)
+
+# Пользовательский ввод
+user_guess = st.number_input("Введите число от 1 до 10:", min_value=1, max_value=10)
+
+if st.button("Стрелять"):
+    st.session_state.attempts += 1
+
+    if user_guess == target_ball:
+        st.session_state.hit = True
+        st.success("🎉 Em sẽ có 1 món quà vào ngày mai!")
+    else:
+        if st.session_state.attempts < 3:
+            st.warning("Не попал! Попробуй еще раз.")
+        else:
+            st.error("😢 Ты исчерпал все попытки! Мяч был на числе: " + str(target_ball))
+            st.session_state.attempts = 0  # Сброс попыток для новой игры
+            st.session_state.hit = False  # Сброс состояния попадания
+
+# Отображение количества попыток
+st.write(f"Попытки: {st.session_state.attempts}/3")
+
+# Сброс игры
+if st.button("Начать новую игру"):
+    st.session_state.attempts = 0
+    st.session_state.hit = False
