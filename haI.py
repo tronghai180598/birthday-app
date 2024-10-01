@@ -75,7 +75,7 @@ target_ball = random.randint(1, 10)
 # Пользовательский ввод
 user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_value=10)
 
-if st.button("CHỌN LẠI SỐ KHÁC ĐÊ"):
+if st.button("OK"):
     st.session_state.attempts += 1
 
     if user_guess == target_ball:
