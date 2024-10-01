@@ -83,16 +83,15 @@ if st.button("OK"):
         st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
         st.balloons()
     else:
-        if st.session_state.attempts < 3:
-            # Подсказка зависит от разницы между введенным и загаданным числом
-            if user_guess < target_ball:
-                st.warning("Mời bạn thử số lớn hơn!")
-            else:
-                st.warning("Mời bạn thử số nhỏ hơn!")
+        # Подсказка зависит от разницы между введенным и загаданным числом
+        if user_guess < target_ball:
+            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
         else:
-            st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
-            st.session_state.attempts = 0  # Сброс попыток для новой игры
-            st.session_state.hit = False  # Сброс состояния попадания
+            st.warning("SỐ VỪA NHẬP NHỎ QUÁ, THỬ LẠI ĐÊ!!")
+    else:
+        st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
+        st.session_state.attempts = 0  # Сброс попыток для новой игры
+        st.session_state.hit = False  # Сброс состояния попадания
 
 # Отображение количества попыток
 st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
