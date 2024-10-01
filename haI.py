@@ -33,27 +33,33 @@ if 'answer' not in st.session_state:
     st.session_state.answer = None
 
 # Ask the user for their choice
-st.subheader("NGA NGỐ CÓ ĐỒNG Ý NĂM SAU VỀ DẠM NGÕ VỚI ANH KHÔNG???")
+st.subheader("NGA NGỐ CÓ ĐỒNG Ý TẾT VỀ DẠM NGỌ VỚI ANH KHÔNG???")
 
-# Show buttons for choices
 if st.session_state.answer is None:
     if st.button('YES'):
         st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
         st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
-        st.balloons()  # This will make balloons fall on the screen
-        st.session_state.answer = "Yes"  # Save the answer
+        st.balloons()  # Это заставит шарики упасть на экран
+        st.session_state.answer = "Yes"  # Сохранить ответ
 
     elif st.button('NO'):
         st.session_state.answer = "No"
-        st.warning("😡 Chọn lại đi! 😡")
+        st.warning("😡 Chọn lại đê! 😡")
         st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
+        
+        # Изменяем текст кнопки "NO" на "YES"
+        if st.button("YES", key="yes_replacement"):
+            st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
+            st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
+            st.balloons()
+            st.session_state.answer = "Yes"
 
 else:
-    # Display final message based on answer
+    # Отображение финального сообщения на основе ответа
     if st.session_state.answer == "Yes":
         st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
     
-    # Allow user to reset their choice
+    # Позволяет пользователю сбросить свой выбор
     if st.button("Chọn lại"):
-        st.session_state.answer = None  # Reset the answer state
+        st.session_state.answer = None  # Сбросить состояние ответа
         st.success("Bạn có thể chọn lại!")
