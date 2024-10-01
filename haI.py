@@ -64,7 +64,7 @@ else:
         st.success("Bạn có thể chọn lại!")
 
 # Игра: Попади в шар
-st.subheader("Игра: Попади в шар!")
+st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
 if 'attempts' not in st.session_state:
     st.session_state.attempts = 0
     st.session_state.hit = False
