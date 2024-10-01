@@ -94,6 +94,6 @@ if st.button("CHỌN LẠI SỐ KHÁC ĐÊ"):
 st.write(f"Попытки: {st.session_state.attempts}/3")
 
 # Сброс игры
-if st.button("Начать новую игру"):
+if st.button("BẮT ĐẦU TRÒ CHƠI MỚI"):
     st.session_state.attempts = 0
     st.session_state.hit = False
