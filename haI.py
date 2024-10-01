@@ -48,7 +48,6 @@ if st.session_state.answer is None:
         st.warning("😡 Chọn lại đê! 😡")
         st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
 
-        # Изменяем текст кнопки "NO" на "YES"
         if st.button("YES", key="yes_replacement"):
             st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
             st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
@@ -65,34 +64,35 @@ else:
 
 # Игра: Попади в шар
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
-if 'attempts' not in st.session_state:
-    st.session_state.attempts = 0
-    st.session_state.hit = False
 
 # Генерируем случайное число от 1 до 10 для попадания в шар
 target_ball = random.randint(1, 10)
 
+# Инициализация попыток
+if 'attempts' not in st.session_state:
+    st.session_state.attempts = 0
+
 # Пользовательский ввод
-user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_value=10)
+user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_value=10, value=1)
 
 if st.button("OK"):
-    if st.session_state.attempts < 3:  # Проверяем, если количество попыток меньше 3
+    for i in range(3):  # Цикл на 3 попытки
+        st.session_state.attempts += 1  # Увеличиваем счетчик попыток
 
-        if user_guess == target_ball:
-            st.session_state.hit = True
+        if user_guess < target_ball:
+            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
+            break  # Прерываем цикл, если ошибка
+        elif user_guess > target_ball:
+            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
+            break  # Прерываем цикл, если ошибка
+        else:  # user_guess == target_ball
             st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
             st.balloons()
-        elif user_guess < target_ball:
-            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
-            st.session_state.attempts += 1
-        else:  # Условие user_guess > target_ball
-            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
-            st.session_state.attempts += 1
-    else:  # Если попытки исчерпаны
-        st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
-        st.session_state.attempts = 0  # Сброс попыток для новой игры
-        st.session_state.hit = False  # Сброс состояния попадания
+            break
 
+        if st.session_state.attempts >= 3:
+            st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
+            st.session_state.attempts = 0  # Сброс попыток для новой игры
 
 # Отображение количества попыток
 st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
@@ -100,4 +100,3 @@ st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
 # Сброс игры
 if st.button("BẮT ĐẦU TRÒ CHƠI MỚI"):
     st.session_state.attempts = 0
-    st.session_state.hit = False
