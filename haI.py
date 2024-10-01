@@ -80,7 +80,7 @@ if st.button("OK"):
 
     if user_guess == target_ball:
         st.session_state.hit = True
-        st.success("🎉 Em sẽ có 1 món quà vào ngày mai!")
+        st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
         st.balloons()
     else:
         if st.session_state.attempts < 3:
@@ -91,7 +91,7 @@ if st.button("OK"):
             st.session_state.hit = False  # Сброс состояния попадания
 
 # Отображение количества попыток
-st.write(f"Попытки: {st.session_state.attempts}/3")
+st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
 
 # Сброс игры
 if st.button("BẮT ĐẦU TRÒ CHƠI MỚI"):
