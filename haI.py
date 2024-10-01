@@ -73,14 +73,15 @@ if 'attempts' not in st.session_state:
 target_ball = random.randint(1, 10)
 
 # Пользовательский ввод
-user_guess = st.number_input("Nhập số từ 1 đến 10:", min_value=1, max_value=10)
+user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_value=10)
 
-if st.button("Chọn Số đi em"):
+if st.button("CHỌN LẠI SỐ KHÁC ĐÊ"):
     st.session_state.attempts += 1
 
     if user_guess == target_ball:
         st.session_state.hit = True
         st.success("🎉 Em sẽ có 1 món quà vào ngày mai!")
+        st.balloons()
     else:
         if st.session_state.attempts < 3:
             st.warning("Không đúng rồi, chọn lại đi em.")
