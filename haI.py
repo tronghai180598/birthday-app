@@ -73,9 +73,9 @@ if 'attempts' not in st.session_state:
 target_ball = random.randint(1, 10)
 
 # Пользовательский ввод
-user_guess = st.number_input("Введите число от 1 до 10:", min_value=1, max_value=10)
+user_guess = st.number_input("Nhập số từ 1 đến 10:", min_value=1, max_value=10)
 
-if st.button("Стрелять"):
+if st.button("Chọn Số đi em"):
     st.session_state.attempts += 1
 
     if user_guess == target_ball:
@@ -83,9 +83,9 @@ if st.button("Стрелять"):
         st.success("🎉 Em sẽ có 1 món quà vào ngày mai!")
     else:
         if st.session_state.attempts < 3:
-            st.warning("Не попал! Попробуй еще раз.")
+            st.warning("Không đúng rồi, chọn lại đi em.")
         else:
-            st.error("😢 Ты исчерпал все попытки! Мяч был на числе: " + str(target_ball))
+            st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
             st.session_state.attempts = 0  # Сброс попыток для новой игры
             st.session_state.hit = False  # Сброс состояния попадания
 
