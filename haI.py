@@ -82,13 +82,20 @@ if st.button("OK"):
         st.session_state.hit = True
         st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
         st.balloons()
-    else:
+     else:
         if st.session_state.attempts < 3:
-            st.warning("Không đúng rồi, chọn lại đi em.")
+            # Подсказка зависит от разницы между введенным и загаданным числом
+            if user_guess < target_ball:
+                st.warning("Мяч выше! Попробуй больше.")
+            else:
+                st.warning("Мяч ниже! Попробуй меньше.")
         else:
-            st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
-            st.session_state.attempts = 0  # Сброс попыток для новой игры
-            st.session_state.hit = False  # Сброс состояния попадания
+            if st.session_state.attempts < 3:
+                st.warning("Không đúng rồi, chọn lại đi em.")
+            else:
+                st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
+                st.session_state.attempts = 0  # Сброс попыток для новой игры
+                st.session_state.hit = False  # Сброс состояния попадания
 
 # Отображение количества попыток
 st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
