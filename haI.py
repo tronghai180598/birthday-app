@@ -77,16 +77,17 @@ user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_v
 
 if st.button("OK"):
     if st.session_state.attempts < 3:  # Проверяем, если количество попыток меньше 3
-        st.session_state.attempts += 1
 
         if user_guess == target_ball:
             st.session_state.hit = True
             st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
             st.balloons()
         elif user_guess < target_ball:
-            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
-        else:  # Условие user_guess > target_ball
             st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
+            st.session_state.attempts += 1
+        else:  # Условие user_guess > target_ball
+            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
+            st.session_state.attempts += 1
     else:  # Если попытки исчерпаны
         st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
         st.session_state.attempts = 0  # Сброс попыток для новой игры
