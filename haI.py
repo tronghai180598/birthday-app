@@ -82,7 +82,7 @@ if st.button("OK"):
         st.session_state.hit = True
         st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
         st.balloons()
-    elif:
+    elif st.session_state.attempts < 3:  # Убедитесь, что эта строка правильная
         # Подсказка зависит от разницы между введенным и загаданным числом
         if user_guess < target_ball:
             st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
