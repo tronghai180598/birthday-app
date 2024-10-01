@@ -82,12 +82,12 @@ if st.button("OK"):
         st.session_state.hit = True
         st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
         st.balloons()
-    else:
+    elif:
         # Подсказка зависит от разницы между введенным и загаданным числом
         if user_guess < target_ball:
-            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
+            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
         else:
-            st.warning("SỐ VỪA NHẬP NHỎ QUÁ, THỬ LẠI ĐÊ!!")
+            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
     else:
         st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
         st.session_state.attempts = 0  # Сброс попыток для новой игры
