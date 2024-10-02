@@ -66,24 +66,24 @@ else:
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
 # Генерируем случайное число от 1 до 10 для попадания в шар
 # Пользовательский ввод
-st.write("EM CÓ TẤT CẢ 3 LẦN ĐOÁN")
+
 st.write("NHẬP SỐ MÀ NGA NGỐ NGHĨ LÀ ĐÚNG: ")
-if st.button("OK"):
+if st.button("BẮT ĐẦU TRÒ CHƠI"):
+    st.write("EM CÓ TẤT CẢ 3 LẦN ĐOÁN")
     target_ball = random.randint(1, 10)
-    for i in range (1,3):
-        user_guess = st.number_input("SỐ TỪ 1 ĐẾN 10: ")
-        user_guess = int(user_guess)
+    for i in range (3):
+        user_guess = st.number_input("SỐ TỪ 1 ĐẾN 10: ", min_value=1, max_value=10, key=i)
+
         if user_guess < target_ball:
             st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")       
         elif user_guess > target_ball:
             st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
         else:
+            st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
+            st.balloons()
             break
-        
-    if user_guess == target_ball:
-        st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
-        st.balloons()
+
     else:
-        st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
+        st.error(f"😢 Chọn sai hết rồi nhé, Số đúng phải là: {target_ball}")
 
 
