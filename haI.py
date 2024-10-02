@@ -69,7 +69,7 @@ if st.session_state.attempts < 3:
 
     if st.button("ĐOÁN"):
         st.session_state.attempts += 1
-        st.warning(f"CÒN LẠI: "{st.session_state.attempts} lan")
+        conlai = 3- st.session_state.attempts
 
         if user_guess < st.session_state.target_ball:
             st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
@@ -79,6 +79,7 @@ if st.session_state.attempts < 3:
             st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
             st.balloons()
             st.session_state.guessed = True
+        st.write(f"NGA NGỐ còn {conlai} lần thử!")
 
 # Проверка, если попытки исчерпаны
 if st.session_state.attempts >= 3:
