@@ -10,12 +10,10 @@ st.title("🎉🎉 CHÚC MỪNG SINH NHẬT NGA NGỐ 🎉🎉")
 # Отображение поздравления с днем рождения
 st.write("1 ĐỜI AN YÊN VÀ HẠNH PHÚC")
 
-# Кнопка для сюрприза
+# Кнопки для сюрприза
 if st.button('EM ẤN NÚT 1'):
     st.image("bánhinhnhat.PNG", caption="CHÚC MỪNG SINH NHẬT NÓC NHÀ", use_column_width=True)
-    st.success("Umbala, hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh. "
-               "Một ngày hết sức ý nghĩa cho em và cho cả anh nữa. "
-               "Vì điều kiện không cho phép anh được ở gần em, anh muốn làm gì đó đặc biệt gửi tới em.")
+    st.success("Umbala, hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh.")
 
 if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
@@ -25,7 +23,7 @@ if st.button('EM ẤN NÚT 3'):
     video_bytes = video_file.read()
     st.video(video_bytes)
 
-# Добавление дополнительного сообщения
+# Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 
@@ -33,7 +31,7 @@ st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
 if 'answer' not in st.session_state:
     st.session_state.answer = None
 
-# Вопрос для пользователя
+# Вопрос к пользователю
 st.subheader("NGA NGỐ CÓ ĐỒNG Ý TẾT VỀ DẠM NGỌ VỚI ANH KHÔNG???")
 
 if st.session_state.answer is None:
@@ -48,12 +46,6 @@ if st.session_state.answer is None:
         st.warning("😡 Chọn lại đê! 😡")
         st.image("anh-doi-hon_102712112.jpg", caption="Anh đang rất giận đó!", use_column_width=True)
 
-        if st.button("YES", key="yes_replacement"):
-            st.success("EM ẤN VÀO NÓ RỒI NHÉ. ANH THẤY RỒI, NĂM SAU PHẢI THỰC HIỆN ĐẤY")
-            st.image("yeuthuong.jfif", caption="CẢM ƠN EM", use_column_width=True)
-            st.balloons()
-            st.session_state.answer = "Yes"
-
 else:
     if st.session_state.answer == "Yes":
         st.success("Cảm ơn vì đã tham gia! Bạn đã chọn: " + st.session_state.answer)
@@ -61,7 +53,6 @@ else:
     if st.button("Chọn lại"):
         st.session_state.answer = None
         st.success("Bạn có thể chọn lại!")
-
 
 # Начало игры
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
@@ -87,6 +78,7 @@ if st.session_state.attempts < 3:
             st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
             st.session_state.guessed = True
 
+# Проверка, если попытки исчерпаны
 if st.session_state.attempts >= 3:
     if not st.session_state.guessed:
         st.error(f"😢 Tất cả các cơ hội đã hết! Số đúng phải là: {st.session_state.target_ball}")
