@@ -56,7 +56,7 @@ else:
 
 # Начало игры
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
-
+st.write("NGA NGỐ SẼ CHỈ CÓ 3 LẦN CHỌN THÔI NHÉ!!!")
 # Инициализация состояния сессии для попыток и целевого числа
 if 'attempts' not in st.session_state:
     st.session_state.attempts = 0
@@ -76,12 +76,13 @@ if st.session_state.attempts < 3:
             st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
         else:
             st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
+            st.balloons()
             st.session_state.guessed = True
 
 # Проверка, если попытки исчерпаны
 if st.session_state.attempts >= 3:
     if not st.session_state.guessed:
-        st.error(f"😢 Tất cả các cơ hội đã hết! Số đúng phải là: {st.session_state.target_ball}")
+        st.error(f"😢HẾT LƯƠT RỒI.KKK! Số đúng phải là: {st.session_state.target_ball}")
     
     if st.button("CHƠI LẠI"):
         st.session_state.attempts = 0
