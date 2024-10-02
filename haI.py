@@ -64,36 +64,25 @@ else:
 
 # Игра: Попади в шар
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
-
 # Генерируем случайное число от 1 до 10 для попадания в шар
-target = random.randint(1, 10)
 # Пользовательский ввод
-user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10: ")
-print('You can guess 5 times!')
-if user_guess.isnum
-
+st.write("EM CÓ TẤT CẢ 3 LẦN ĐOÁN")
 if st.button("OK"):
-    for i in range(3):  # Цикл на 3 попытки
-        st.session_state.attempts += 1  # Увеличиваем счетчик попыток
-
+    target_ball = random.randint(1, 10)
+    for i in range (1,3):
+        st.write("NHẬP SỐ MÀ NGA NGỐ NGHĨ LÀ ĐÚNG: ")
+        user_guess = st.number_input("SỐ TỪ 1 ĐẾN 10: ")
         if user_guess < target_ball:
-            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
-            break  # Прерываем цикл, если ошибка
+            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")       
         elif user_guess > target_ball:
             st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
-            break  # Прерываем цикл, если ошибка
-        else:  # user_guess == target_ball
-            st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
-            st.balloons()
+        else:
             break
+        
+    if user_guess == target_ball:
+        st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
+        st.balloons()
+    else:
+        st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
 
-        if st.session_state.attempts >= 3:
-            st.error("😢 Chọn sai hết rồi nhé, Số đúng phải là: " + str(target_ball))
-            st.session_state.attempts = 0  # Сброс попыток для новой игры
 
-# Отображение количества попыток
-st.write(f"SỐ LƯỢT ĐÃ CHỌN: {st.session_state.attempts}/3")
-
-# Сброс игры
-if st.button("BẮT ĐẦU TRÒ CHƠI MỚI"):
-    st.session_state.attempts = 0
