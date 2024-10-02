@@ -71,11 +71,12 @@ st.write("NHẬP SỐ MÀ NGA NGỐ NGHĨ LÀ ĐÚNG: ")
 if st.button("BẮT ĐẦU TRÒ CHƠI"):
     st.write("EM CÓ TẤT CẢ 3 LẦN ĐOÁN")
     target_ball = random.randint(1, 10)
-    for i in range (1,3):
-        user_guess = st.number_input("SỐ TỪ 1 ĐẾN 10: ", min_value=1, max_value=10, key=i)
+    user_guess = st.number_input("SỐ TỪ 1 ĐẾN 10: ", min_value=1, max_value=10, key=i)
+    for i in range (3):
 
         if user_guess < target_ball:
-            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")       
+            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!") 
+            i = i+1
         elif user_guess > target_ball:
             st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
         else:
