@@ -69,6 +69,7 @@ if st.session_state.attempts < 3:
 
     if st.button("ĐOÁN"):
         st.session_state.attempts += 1
+        st.warning(f"CÒN LẠI: "{st.session_state.attempts} lan")
 
         if user_guess < st.session_state.target_ball:
             st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
