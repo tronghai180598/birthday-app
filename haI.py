@@ -66,14 +66,11 @@ else:
 st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
 
 # Генерируем случайное число от 1 до 10 для попадания в шар
-target_ball = random.randint(1, 10)
-
-# Инициализация попыток
-if 'attempts' not in st.session_state:
-    st.session_state.attempts = 0
-
+target = random.randint(1, 10)
 # Пользовательский ввод
-user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10:", min_value=1, max_value=10, value=1)
+user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10: ")
+print('You can guess 5 times!')
+if user_guess.isnum
 
 if st.button("OK"):
     for i in range(3):  # Цикл на 3 попытки
