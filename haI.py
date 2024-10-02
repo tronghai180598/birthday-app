@@ -53,41 +53,41 @@ else:
     if st.button("Chọn lại"):
         st.session_state.answer = None
         st.success("Bạn có thể chọn lại!")
-if st.button('EM ẤN NÚT 1'):
-    # Начало игры
-    st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
-    st.write("NGA NGỐ SẼ CHỈ CÓ 3 LẦN CHỌN THÔI NHÉ!!!")
-    # Инициализация состояния сессии для попыток и целевого числа
-    if 'attempts' not in st.session_state:
+
+# Начало игры
+st.subheader("CÙNG CHƠI TRÒ CHỌN SỐ NÀO!")
+st.write("NGA NGỐ SẼ CHỈ CÓ 3 LẦN CHỌN THÔI NHÉ!!!")
+# Инициализация состояния сессии для попыток и целевого числа
+if 'attempts' not in st.session_state:
+    st.session_state.attempts = 0
+    st.session_state.target_ball = random.randint(1, 10)
+    st.session_state.guessed = False
+
+# Ввод пользователя
+if st.session_state.attempts < 3:
+    user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10: ", min_value=1, max_value=10)
+
+    if st.button("ĐOÁN"):
+        st.session_state.attempts += 1
+        conlai = 3- st.session_state.attempts
+
+        if user_guess < st.session_state.target_ball:
+            st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
+        elif user_guess > st.session_state.target_ball:
+            st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
+        else:
+            st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
+            st.balloons()
+            st.session_state.guessed = True
+        st.write(f"NGA NGỐ còn {conlai} lần thử!")
+
+# Проверка, если попытки исчерпаны
+if st.session_state.attempts >= 3:
+    if not st.session_state.guessed:
+        st.error(f"😢HẾT LƯƠT RỒI.KKK! Số đúng phải là: {st.session_state.target_ball}")
+    
+    if st.button("CHƠI LẠI"):
         st.session_state.attempts = 0
         st.session_state.target_ball = random.randint(1, 10)
         st.session_state.guessed = False
-    
-    # Ввод пользователя
-    if st.session_state.attempts < 3:
-        user_guess = st.number_input("NHẬP SỐ TỪ 1 ĐẾN 10: ", min_value=1, max_value=10)
-    
-        if st.button("ĐOÁN"):
-            st.session_state.attempts += 1
-            conlai = 3- st.session_state.attempts
-    
-            if user_guess < st.session_state.target_ball:
-                st.warning("SỐ VỪA NHẬP BÉ QUÁ, THỬ LẠI ĐÊ!!")
-            elif user_guess > st.session_state.target_ball:
-                st.warning("SỐ VỪA NHẬP LỚN QUÁ, THỬ LẠI ĐÊ!!")
-            else:
-                st.success("🎉🎉CHÚC MỪNG NGA NGỐ, EM SẼ CÓ QUÀ NHÉ!🎉🎉")
-                st.balloons()
-                st.session_state.guessed = True
-            st.write(f"NGA NGỐ còn {conlai} lần thử!")
-    
-    # Проверка, если попытки исчерпаны
-    if st.session_state.attempts >= 3:
-        if not st.session_state.guessed:
-            st.error(f"😢HẾT LƯƠT RỒI.KKK! Số đúng phải là: {st.session_state.target_ball}")
-        
-        if st.button("CHƠI LẠI"):
-            st.session_state.attempts = 0
-            st.session_state.target_ball = random.randint(1, 10)
-            st.session_state.guessed = False
-            st.success("Chơi lại thành công! Hãy đoán lại số nào!")
+        st.success("Chơi lại thành công! Hãy đoán lại số nào!")
