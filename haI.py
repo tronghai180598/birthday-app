@@ -20,9 +20,10 @@ if st.button('EM ẤN NÚT 1'):
 if st.button('EM ẤN NÚT 2'):
     st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
     st.success("Chúc mừng sinh nhật em! Hôm nay là một ngày đặc biệt, không chỉ vì nó là ngày em ra đời, mà còn vì em đã mang lại ánh"
-                "sáng và niềm vui cho cuộc sống của anh. Anh luôn cảm ơn cuộc đời vì đã cho anh cơ hội được bên cạnh em. Hy vọng năm nay sẽ mang đến" 
-                "cho em những trải nghiệm tuyệt vời, những điều mới mẻ và cả những kỷ niệm đáng nhớ. Hãy nhớ rằng, anh sẽ luôn ủng hộ em trong mọi bước đường, "
-                "cùng em vượt qua mọi thử thách. Chúc em thật nhiều sức khỏe, hạnh phúc và luôn giữ vững ước mơ của mình!")
+                "sáng và niềm vui cho cuộc sống của anh. Anh luôn cảm ơn cuộc đời vì đã cho anh cơ hội được gặp em (Mà quan trọng hơn lag cảm ơn Dì Bảo). "
+                " Hy vọng tuổi mới sẽ mang đến cho em những trải nghiệm tuyệt vời, những điều mới mẻ và cả những kỷ niệm đáng nhớ."
+                " Hãy nhớ rằng, anh sẽ luôn ủng hộ em trong mọi bước đường, cùng em vượt qua mọi thử thách. Chúc em thật nhiều sức khỏe, "
+                " hạnh phúc và luôn giữ vững ước mơ của mình!")
 if st.button('EM ẤN NÚT 3'):
     video_file = open('video_nen.mp4', 'rb')
     video_bytes = video_file.read()
