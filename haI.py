@@ -29,16 +29,25 @@ if st.button('EM ẤN NÚT 3'):
     video_bytes = video_file.read()
     st.video(video_bytes)
 if st.button('EM ẤN NÚT 4'):
-    if st.button('EM ẤN NÚT 5'):
-        st.image("y1.jpg", caption="Yêu xa cũng chỉ là con số thôi bạn ơi", use_column_width=True)
-    if st.button('EM ẤN NÚT 5'):
-        st.image("y2.jpg", caption="Chỉ cần bạn cố gắng cùng tôi", use_column_width=True)
-    if st.button('EM ẤN NÚT 5'):
-        st.image("y3.jpg", caption="Thì mọi khó khăn cũng sẽ cùng nhau vượt qua", use_column_width=True)
-    if st.button('EM ẤN NÚT 5'):
-        st.image("y4.jpg", caption="Chúng ta sẽ xây tương lai có chúng ta", use_column_width=True)
-    if st.button('EM ẤN NÚT 5'):
-        st.image("y5.jpg", caption="Để không phải hối tiếc cho sự lựa chọ của mình nha Nga ngố", use_column_width=True)
+    # Initialize session state if it doesn't exist
+    if 'index' not in st.session_state:
+        st.session_state.index = 0
+
+        images = [
+            ("y1.jpg", "Yêu xa cũng chỉ là con số thôi bạn ơi"),
+            ("y2.jpg", "Chỉ cần bạn cố gắng cùng tôi"),
+            ("y3.jpg", "Thì mọi khó khăn cũng sẽ cùng nhau vượt qua"),
+            ("y4.jpg", "Chúng ta sẽ xây tương lai có chúng ta"),
+            ("y5.jpg", "Để không phải hối tiếc cho sự lựa chọn của mình nha Nga ngố")
+        ]
+
+    # Show current image
+    if st.session_state.index < len(images):
+        st.image(images[st.session_state.index][0], caption=images[st.session_state.index][1], use_column_width=True)
+        st.session_state.index += 1  # Increment index for the next button press
+    else:
+        st.write("Đã xem hết các hình ảnh.")
+        st.session_state.index = 0  # Reset index if all images have been shown
 # Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
