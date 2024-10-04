@@ -31,13 +31,13 @@ if st.button('EM ẤN NÚT 3'):
 if st.button('EM ẤN NÚT 4'):
     if st.button('EM ẤN NÚT 5'):
         st.image("y1.jpg", caption="Yêu xa cũng chỉ là con số thôi bạn ơi", use_column_width=True)
-    elif st.button('EM ẤN NÚT 5'):
+    if st.button('EM ẤN NÚT 5'):
         st.image("y2.jpg", caption="Chỉ cần bạn cố gắng cùng tôi", use_column_width=True)
-    elif st.button('EM ẤN NÚT 5'):
+    if st.button('EM ẤN NÚT 5'):
         st.image("y3.jpg", caption="Thì mọi khó khăn cũng sẽ cùng nhau vượt qua", use_column_width=True)
-    elif st.button('EM ẤN NÚT 5'):
+    if st.button('EM ẤN NÚT 5'):
         st.image("y4.jpg", caption="Chúng ta sẽ xây tương lai có chúng ta", use_column_width=True)
-    else st.button('EM ẤN NÚT 5'):
+    if st.button('EM ẤN NÚT 5'):
         st.image("y5.jpg", caption="Để không phải hối tiếc cho sự lựa chọ của mình nha Nga ngố", use_column_width=True)
 # Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
