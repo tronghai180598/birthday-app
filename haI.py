@@ -33,13 +33,13 @@ if st.button('EM ẤN NÚT 4'):
     if 'index' not in st.session_state:
         st.session_state.index = 0
 
-        images = [
-            ("y1.jpg", "Yêu xa cũng chỉ là con số thôi bạn ơi"),
-            ("y2.jpg", "Chỉ cần bạn cố gắng cùng tôi"),
-            ("y3.jpg", "Thì mọi khó khăn cũng sẽ cùng nhau vượt qua"),
-            ("y4.jpg", "Chúng ta sẽ xây tương lai có chúng ta"),
-            ("y5.jpg", "Để không phải hối tiếc cho sự lựa chọn của mình nha Nga ngố")
-        ]
+    images = [
+        ("y1.jpg", "Yêu xa cũng chỉ là con số thôi bạn ơi"),
+        ("y2.jpg", "Chỉ cần bạn cố gắng cùng tôi"),
+        ("y3.jpg", "Thì mọi khó khăn cũng sẽ cùng nhau vượt qua"),
+        ("y4.jpg", "Chúng ta sẽ xây tương lai có chúng ta"),
+        ("y5.jpg", "Để không phải hối tiếc cho sự lựa chọn của mình nha Nga ngố")
+    ]
 
     # Show current image
     if st.session_state.index < len(images):
