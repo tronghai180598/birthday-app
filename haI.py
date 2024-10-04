@@ -46,7 +46,7 @@ if st.button('EM ẤN NÚT 4 LIÊN TỤC ĐỂ XEM HẾT ẢNH NHÉ'):
         st.image(images[st.session_state.index][0], caption=images[st.session_state.index][1], use_column_width=True)
         st.session_state.index += 1  # Increment index for the next button press
     else:
-        st.write("Đã xem hết các hình ảnh.")
+        st.write("HẾT ẢNH RỒI BẠN ÊI. ĐI TIẾP ĐỂ XEM CÁI KHÁC ĐÊ")
         st.session_state.index = 0  # Reset index if all images have been shown
 # Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
