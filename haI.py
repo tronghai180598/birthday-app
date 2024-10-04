@@ -28,7 +28,12 @@ if st.button('EM ẤN NÚT 3'):
     video_file = open('video_nen.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
-
+if st.button('EM ẤN NÚT 4'):
+    st.image("y1.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    st.image("y2.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    st.image("y3.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    st.image("y4.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    st.image("y5.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
 # Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
