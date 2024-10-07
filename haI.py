@@ -12,43 +12,43 @@ st.write("1 ĐỜI AN YÊN VÀ HẠNH PHÚC")
 
 # Кнопки для сюрприза
 if st.button('EM ẤN NÚT 1'):
-    st.image("banh.jpg", caption="CHÚC MỪNG SINH NHẬT NÓC NHÀ", use_column_width=True)
-    st.success("Umbala, hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh. "
-               "Một ngày hết sức ý nghĩa cho em và cho cả anh nữa. "
-               "Vì điều kiện không cho phép anh được ở gần em, anh muốn làm gì đó đặc biệt gửi tới em.")
+    # st.image("banh.jpg", caption="CHÚC MỪNG SINH NHẬT NÓC NHÀ", use_column_width=True)
+    # st.success("Umbala, hôm nay là sinh nhật cô bé Thiên Bình và hay dỗi của anh. "
+    #            "Một ngày hết sức ý nghĩa cho em và cho cả anh nữa. "
+    #            "Vì điều kiện không cho phép anh được ở gần em, anh muốn làm gì đó đặc biệt gửi tới em.")
 
 if st.button('EM ẤN NÚT 2'):
-    st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
-    st.image("cmsn.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
-    st.success("Chúc mừng sinh nhật em! Hôm nay là một ngày đặc biệt, không chỉ vì nó là ngày em ra đời, mà còn vì em đã mang lại ánh"
-                "sáng và niềm vui cho cuộc sống của anh. Anh luôn cảm ơn cuộc đời vì đã cho anh cơ hội được gặp em (Mà quan trọng hơn lag cảm ơn Dì Bảo). "
-                " Hy vọng tuổi mới sẽ mang đến cho em những trải nghiệm tuyệt vời, những điều mới mẻ và cả những kỷ niệm đáng nhớ."
-                " Hãy nhớ rằng, anh sẽ luôn ủng hộ em trong mọi bước đường, cùng em vượt qua mọi thử thách. Chúc em thật nhiều sức khỏe, "
-                " hạnh phúc và luôn giữ vững ước mơ của mình!")
+    # st.image("hoa hong.jfif", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    # st.image("cmsn.jpg", caption="Anh ước rằng trong thời gian gần nhất bàn tay chúng ta sẽ thay tay của họ trong ảnh này", use_column_width=True)
+    # st.success("Chúc mừng sinh nhật em! Hôm nay là một ngày đặc biệt, không chỉ vì nó là ngày em ra đời, mà còn vì em đã mang lại ánh"
+    #             "sáng và niềm vui cho cuộc sống của anh. Anh luôn cảm ơn cuộc đời vì đã cho anh cơ hội được gặp em (Mà quan trọng hơn lag cảm ơn Dì Bảo). "
+    #             " Hy vọng tuổi mới sẽ mang đến cho em những trải nghiệm tuyệt vời, những điều mới mẻ và cả những kỷ niệm đáng nhớ."
+    #             " Hãy nhớ rằng, anh sẽ luôn ủng hộ em trong mọi bước đường, cùng em vượt qua mọi thử thách. Chúc em thật nhiều sức khỏe, "
+    #             " hạnh phúc và luôn giữ vững ước mơ của mình!")
 if st.button('EM ẤN NÚT 3'):
-    video_file = open('video_nen.mp4', 'rb')
-    video_bytes = video_file.read()
+    # video_file = open('video_nen.mp4', 'rb')
+    # video_bytes = video_file.read()
     st.video(video_bytes)
 if st.button('EM ẤN NÚT 4 LIÊN TỤC ĐỂ XEM HẾT ẢNH NHÉ'):
-    # Initialize session state if it doesn't exist
-    if 'index' not in st.session_state:
-        st.session_state.index = 0
+    # # Initialize session state if it doesn't exist
+    # if 'index' not in st.session_state:
+    #     st.session_state.index = 0
 
-    images = [
-        ("y1.jpg", "Yêu xa cũng chỉ là con số thôi bạn ơi"),
-        ("y2.jpg", "Chỉ cần bạn cố gắng cùng tôi"),
-        ("y3.jpg", "Thì mọi khó khăn cũng sẽ cùng nhau vượt qua"),
-        ("y4.jpg", "Chúng ta sẽ xây tương lai có chúng ta"),
-        ("y5.jpg", "Để không phải hối tiếc cho sự lựa chọn của mình nha Nga ngố")
-    ]
+    # images = [
+    #     ("y1.jpg", "Yêu xa cũng chỉ là con số thôi bạn ơi"),
+    #     ("y2.jpg", "Chỉ cần bạn cố gắng cùng tôi"),
+    #     ("y3.jpg", "Thì mọi khó khăn cũng sẽ cùng nhau vượt qua"),
+    #     ("y4.jpg", "Chúng ta sẽ xây tương lai có chúng ta"),
+    #     ("y5.jpg", "Để không phải hối tiếc cho sự lựa chọn của mình nha Nga ngố")
+    # ]
 
-    # Show current image
-    if st.session_state.index < len(images):
-        st.image(images[st.session_state.index][0], caption=images[st.session_state.index][1], use_column_width=True)
-        st.session_state.index += 1  # Increment index for the next button press
-    else:
-        st.write("HẾT ẢNH RỒI BẠN ÊI. ĐI TIẾP ĐỂ XEM CÁI KHÁC ĐÊ")
-        st.session_state.index = 0  # Reset index if all images have been shown
+    # # Show current image
+    # if st.session_state.index < len(images):
+    #     st.image(images[st.session_state.index][0], caption=images[st.session_state.index][1], use_column_width=True)
+    #     st.session_state.index += 1  # Increment index for the next button press
+    # else:
+    #     st.write("HẾT ẢNH RỒI BẠN ÊI. ĐI TIẾP ĐỂ XEM CÁI KHÁC ĐÊ")
+    #     st.session_state.index = 0  # Reset index if all images have been shown
 # Дополнительное сообщение
 st.subheader("GẦN ĐƯỢC VỀ VỚI NGA NGỐ RỒI")
 st.write("HEHE. NGA NGỐ CÓ HÓNG ANH VỀ KHÔNG???")
